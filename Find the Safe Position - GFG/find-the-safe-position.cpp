@@ -7,27 +7,25 @@ using namespace std;
 
 class Solution {
   public:
-  void solve(int k, int index, vector<int> &nums, int &ans){
-    //Base condition
-    if(nums.size()==1){
-        ans=nums[0];
+    void solve(vector<int> &v, int k, int index, int &ans) {
+        if(v.size() == 1) {
+            ans = v[0];
+            return;
+        }
+        index = (index+k)%v.size();
+        v.erase(v.begin() + index);
+        solve(v,k,index,ans);
         return;
     }
-    //Hypothesis
-    index=(index+k)%nums.size();
-    nums.erase(nums.begin()+index);
-    solve(k,index,nums,ans);
-    //No induction step
-    return;
-}
     int safePos(int n, int k) {
         // code here
-        int ans=0;
-        vector<int> nums;
+        std::vector<int> v;
         for(int i=0;i<n;i++){
-            nums.push_back(i+1);
+            v.push_back(i+1);
         }
-        solve(k-1,0,nums,ans);
+        k--;
+        int ans=0;
+        solve(v, k, 0, ans);
         return ans;
     }
 };
