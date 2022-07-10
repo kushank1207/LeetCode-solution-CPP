@@ -42,9 +42,7 @@ class Solution{
                 mn = min(mn, abs(range-2*i));
             }
         }
-        // for(int i=0; i<row.size(); i++) {
-            
-        // }
+
         return mn;
 	} 
 };
