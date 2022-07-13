@@ -1,10 +1,6 @@
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
-        // if(coins.size()==1 && coins[0] < amount && amount%coins[0] != 0)
-        //     return -1;
-        // if()
-        
         int n = coins.size();
         int dp[n+1][amount+1];
         
