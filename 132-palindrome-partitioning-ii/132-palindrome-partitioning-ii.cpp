@@ -12,7 +12,7 @@ public:
         return true;
     }
     
-    int MCM(string s, int i, int j) {
+    int MCM(string &s, int i, int j) {
         if(i >= j)
             return 0;
         
