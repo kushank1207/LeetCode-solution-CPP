@@ -13,13 +13,17 @@ public:
             mxr[i] = max(mxr[i+1], height[i]);
         
         int water[height.size()];
-        for(int i=0; i<height.size(); i++) 
+        int mx=0;
+        
+        for(int i=0; i<height.size(); i++) {
             water[i] = min(mxl[i], mxr[i]) - height[i];
+            
+        }
+        for(int i=0; i<height.size(); i++) {
+            water[i] = min(mxl[i], mxr[i]) - height[i];
+            mx += water[i];
+        }
         
-        int sum = 0;
-        for(int i=0; i<height.size(); i++)
-            sum += water[i];
-        
-        return sum;
+        return mx;
     }
 };
