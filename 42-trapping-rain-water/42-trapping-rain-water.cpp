@@ -11,8 +11,6 @@ public:
             mxl[i] = max(mxl[i-1], height[i]);
         for(int i=height.size()-2; i>=0; i--)
             mxr[i] = max(mxr[i+1], height[i]);
-        
-        int water[height.size()];
         int mx=0;
         
         for(int i=0; i<height.size(); i++) {
