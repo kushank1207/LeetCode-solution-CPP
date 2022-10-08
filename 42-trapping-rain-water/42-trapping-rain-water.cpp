@@ -16,9 +16,7 @@ public:
         int mx=0;
         
         for(int i=0; i<height.size(); i++) {
-            water[i] = min(mxl[i], mxr[i]) - height[i];
-            mx += water[i];
-            
+            mx += min(mxl[i], mxr[i]) - height[i];
         }        
         return mx;
     }
