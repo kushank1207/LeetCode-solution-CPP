@@ -22,7 +22,8 @@ public:
         if(s.front() == '0')
             return 0;
         
-        vector<int> dp(s.length()+1);
+        int dp[s.length()+1];
+        memset(dp, 0, sizeof(dp));
         dp[0] = 1;
         
         for(int i=1; i<=s.length(); i++) {
